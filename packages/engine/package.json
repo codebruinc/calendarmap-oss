@@ -17,7 +17,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "date-fns": "^2.30.0",
+    "date-fns": "^4.1.0",
     "date-fns-tz": "^2.0.0",
     "papaparse": "^5.5.3"
   },
