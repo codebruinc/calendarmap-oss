@@ -1,0 +1,4 @@
+Email,Name,Description,Phone,Address Line 1,Address Line 2,City,State,Postal Code,Country
+john.doe@example.com,John Doe,Premium customer,+1-555-123-4567,123 Main Street,Apt 4B,New York,NY,10001,US
+sarah.smith@company.co.uk,Sarah Smith,Corporate account,+44-20-7946-0958,42 Baker Street,,London,England,NW1 6XE,GB
+mike.davis@tech.ca,Mike Davis,,"(416) 555-0199",789 Pine Avenue,,Toronto,ON,M5H 2N2,CA

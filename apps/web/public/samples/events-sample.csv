@@ -1,0 +1,6 @@
+Title,Start,End,All Day,Location,Description,URL,Organizer
+Team Meeting,2025-01-25 09:00,2025-01-25 10:00,FALSE,Conference Room A,Weekly team standup meeting,https://example.com/meeting,admin@company.com
+Product Launch,2025-01-30,2025-01-30,TRUE,San Francisco,Company-wide product launch event,https://example.com/launch,events@company.com
+Client Presentation,2025-02-05 14:00,2025-02-05 15:30,FALSE,Zoom,Quarterly business review with client,https://zoom.us/j/123456789,sales@company.com
+Company Holiday,2025-02-17,2025-02-17,TRUE,,Presidents Day - Office Closed,,hr@company.com
+Workshop: React Training,2025-02-20 10:00,2025-02-20 16:00,FALSE,Training Room B,Full-day React development workshop,https://example.com/training,training@company.com

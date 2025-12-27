@@ -1,0 +1,3 @@
+Title,Handle,Status,Published,Variant SKU,Variant Price
+Maybe Product,maybe-product,active,MAYBE,MAYBE001,29.99
+Invalid Bool Product,invalid-bool,active,INVALID,INVAL001,19.99

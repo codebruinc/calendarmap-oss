@@ -1,0 +1,8 @@
+Title,Handle,Status,Published,Variant SKU,Variant Price,Tags,Body (HTML)
+"Product with, comma",comma-product,active,TRUE,COMMA001,29.99,"tag1,tag2,tag3","<p>Description with, comma and ""quotes""</p>"
+"Product with
+newline",newline-product,active,TRUE,NEWLINE001,19.99,"multi
+line
+tags","<p>Description with
+line breaks</p>"
+Product with "quotes",quote-product,active,TRUE,QUOTE001,39.99,"""quoted"" tags",<p>Normal description</p>

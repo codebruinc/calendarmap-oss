@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+    
+    - name: Install dependencies (engine)
+      run: cd packages/engine && npm install
+    
+    - name: Install dependencies (web)
+      run: cd apps/web && npm install
+    
+    - name: Build packages
+      run: npm run build
+    
+    - name: Run tests
+      run: npm run test
+    
+    - name: Type check
+      run: npm run lint
+  
+  build-web:
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+    
+    - name: Install dependencies (engine)
+      run: cd packages/engine && npm install
+    
+    - name: Install dependencies (web)
+      run: cd apps/web && npm install
+    
+    - name: Build engine and web app
+      run: npm run build
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: web-build
+        path: apps/web/out

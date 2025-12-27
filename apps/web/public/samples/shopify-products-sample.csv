@@ -1,0 +1,6 @@
+Product Name,Product Handle,Product Status,Is Published,Product SKU,Product Price,Product Description,Brand,Category,Tags,Stock Quantity,Backorder Policy,Product Image
+Premium Coffee Beans,premium-coffee-beans,active,TRUE,COFFEE-001,24.99,High-quality single origin coffee beans,Coffee Co,Food & Beverage,organic premium,50,deny,https://example.com/coffee.jpg
+Wireless Headphones,wireless-headphones,active,TRUE,AUDIO-WH-001,199.99,Bluetooth headphones with noise cancellation,TechCorp,Electronics,bluetooth wireless,25,deny,https://example.com/headphones.jpg
+Organic T-Shirt,organic-tshirt,draft,FALSE,SHIRT-ORG-M,29.99,100% organic cotton t-shirt,EcoWear,Apparel,organic sustainable,0,continue,https://example.com/tshirt.jpg
+Yoga Mat Premium,yoga-mat-premium,active,TRUE,YOGA-MAT-001,49.99,Non-slip yoga mat with carrying strap,FitnessPro,Sports,yoga fitness,15,deny,https://example.com/yoga-mat.jpg
+Kitchen Knife Set,kitchen-knife-set,archived,FALSE,KITCHEN-KNIFE-5,149.99,Professional 5-piece knife set,ChefTools,Home & Kitchen,kitchen knives,8,deny,https://example.com/knives.jpg

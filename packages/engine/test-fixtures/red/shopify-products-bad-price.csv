@@ -1,0 +1,4 @@
+Title,Handle,Status,Published,Variant SKU,Variant Price
+Currency Symbol Product,currency-product,active,TRUE,CURR001,$29.99
+Negative Price Product,negative-product,active,TRUE,NEG001,-15.00
+Text Price Product,text-product,active,TRUE,TEXT001,not-a-number

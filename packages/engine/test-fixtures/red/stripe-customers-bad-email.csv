@@ -1,0 +1,7 @@
+Email,Name
+invalid-email-format,John Doe
+missing@domain,Sarah Smith
+multiple@@symbols.com,Mike Davis
+@missing-local.com,Emma Chen
+missing-extension@domain,Alex Brown
+toolong@verylongdomainnamethatisinvalidbecauseitexceedsmaximumlengthallowedforemail.com,Long Email User

@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Main pages
+Allow: /map
+Allow: /map/calendar-ics
+Allow: /docs
+Allow: /for-ai
+Allow: /cli
+Allow: /pricing
+Allow: /privacy
+
+# Sitemap
+Sitemap: https://calendarmap.app/sitemap.xml

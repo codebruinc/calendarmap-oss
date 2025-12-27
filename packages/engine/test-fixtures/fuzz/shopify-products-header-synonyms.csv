@@ -1,0 +1,3 @@
+Product Name,URL Handle,State,Visible,SKU,Price
+Synonym Product,synonym-product,ACTIVE,TRUE,SYN001,29.99
+Name Product,name-product,draft,FALSE,NAME001,19.99

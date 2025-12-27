@@ -1,0 +1,54 @@
+{
+  "name": "@calendarmap/engine",
+  "version": "1.0.0",
+  "description": "Core CSV to ICS mapping engine for CalendarMap with smart field detection and validation",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "tsc --noEmit",
+    "test": "vitest",
+    "test:qa": "node -p \"const { runQASuite, formatQAReport, runRoundTripTest, goldenCases } = require('./dist/index.js'); [formatQAReport(runQASuite()), '\\n🔄 Round-Trip: ' + goldenCases.map(t => runRoundTripTest(t.events).passed ? '✅' : '❌').join(' ') + (goldenCases.every(t => runRoundTripTest(t.events).passed) ? ' All stable!' : ' Some unstable!')].join('\\n')\"",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0",
+    "papaparse": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.11",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "vitest": "^1.6.1"
+  },
+  "keywords": [
+    "csv",
+    "ics",
+    "calendar",
+    "icalendar",
+    "mapping",
+    "validation",
+    "converter",
+    "events"
+  ],
+  "homepage": "https://calendarmap.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codebruinc/calendarmap.git",
+    "directory": "packages/engine"
+  },
+  "bugs": {
+    "url": "https://github.com/codebruinc/calendarmap/issues"
+  },
+  "author": "codebru.com",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  }
+}

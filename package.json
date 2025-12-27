@@ -1,0 +1,17 @@
+{
+  "name": "calendarmap",
+  "version": "1.0.0",
+  "description": "Convert CSV events to ICS calendar format in 30 seconds",
+  "private": true,
+  "scripts": {
+    "dev": "cd apps/web && npm run dev",
+    "build": "cd packages/engine && npm install && npm run build && cd ../../apps/web && npm install && npm run build",
+    "build:cf": "cd packages/engine && npm install && npm run build && cd ../../apps/web && npm install && npm run build:cf",
+    "deploy": "wrangler deploy",
+    "deploy:dev": "wrangler deploy --env dev",
+    "lint": "cd packages/engine && npm run lint && cd ../../apps/web && npm run lint",
+    "test": "cd packages/engine && npm run test"
+  },
+  "keywords": ["csv", "ics", "calendar", "events", "mapping", "data"],
+  "license": "MIT"
+}

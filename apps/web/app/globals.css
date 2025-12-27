@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global spacing improvements for better readability */
+@layer base {
+  /* Improve default prose spacing */
+  .prose {
+    @apply text-lg;
+  }
+  
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    @apply mt-8 mb-6;
+  }
+  
+  .prose p {
+    @apply mb-6 leading-relaxed;
+  }
+  
+  .prose ul,
+  .prose ol {
+    @apply my-6 space-y-3;
+  }
+  
+  .prose li {
+    @apply leading-relaxed;
+  }
+  
+  .prose pre {
+    @apply my-8;
+  }
+  
+  /* Global improvements for non-prose content */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  
+  h1 {
+    @apply text-3xl mb-6;
+  }
+  
+  h2 {
+    @apply text-2xl mt-8 mb-4;
+  }
+  
+  h3 {
+    @apply text-xl mt-6 mb-3;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+  
+  /* Better spacing for sections */
+  section {
+    @apply py-8;
+  }
+  
+  /* Card and container spacing */
+  .card,
+  .container > div {
+    @apply p-6 lg:p-8;
+  }
+  
+  /* List spacing when not in prose */
+  ul:not(.prose ul),
+  ol:not(.prose ol) {
+    @apply space-y-2;
+  }
+  
+  /* Code block spacing */
+  pre:not(.prose pre) {
+    @apply p-4 my-6 rounded-lg;
+  }
+  
+  /* Form element spacing */
+  form > * + * {
+    @apply mt-6;
+  }
+  
+  /* Button spacing in groups */
+  .btn-group > * + *,
+  .button-group > * + * {
+    @apply ml-4;
+  }
+}

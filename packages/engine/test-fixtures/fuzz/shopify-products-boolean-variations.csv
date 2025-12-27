@@ -1,0 +1,13 @@
+Title,Handle,Status,Published,Variant SKU,Variant Price
+True Product,true-product,active,true,TRUE001,29.99
+True Upper,true-upper,active,TRUE,TRUEU001,29.99
+False Product,false-product,active,false,FALSE001,29.99
+False Upper,false-upper,active,FALSE,FALSEU001,29.99
+Yes Product,yes-product,active,yes,YES001,29.99
+Yes Upper,yes-upper,active,YES,YESU001,29.99
+No Product,no-product,active,no,NO001,29.99
+No Upper,no-upper,active,NO,NOU001,29.99
+One Product,one-product,active,1,ONE001,29.99
+Zero Product,zero-product,active,0,ZERO001,29.99
+On Product,on-product,active,on,ON001,29.99
+Off Product,off-product,active,off,OFF001,29.99

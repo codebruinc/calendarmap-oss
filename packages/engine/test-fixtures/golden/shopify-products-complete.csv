@@ -1,0 +1,4 @@
+Title,Handle,Status,Published,Variant SKU,Variant Price,Body (HTML),Vendor,Product Category,Tags,Variant Inventory Qty,Variant Inventory Policy,Image Src
+Premium Headphones,premium-headphones,active,TRUE,HEAD001,199.99,"<p>High-quality wireless headphones with noise cancellation.</p>",AudioTech,Electronics,"audio,wireless,premium",50,continue,https://example.com/headphones.jpg
+Coffee Mug Set,coffee-mug-set,draft,FALSE,MUG002,24.99,"<p>Beautiful ceramic mug set, perfect for your morning coffee.</p>",HomeBrew,Kitchen,"coffee,ceramic,kitchen",25,deny,https://example.com/mugs.jpg
+Yoga Mat,yoga-mat-premium,active,TRUE,YOGA003,0.00,"<p>Premium yoga mat for your daily practice.</p>",FitLife,Sports,"yoga,fitness,health",0,continue,https://example.com/yoga-mat.jpg

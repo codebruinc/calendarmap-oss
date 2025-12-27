@@ -1,0 +1,7 @@
+Title,Handle,Status,Published,Variant SKU,Variant Price,Variant Inventory Qty
+Comma Decimal,comma-decimal,active,TRUE,COMMA001,"19,99",100
+Space Number,space-number,active,TRUE,SPACE001," 29.99 ",50
+Leading Zero,leading-zero,active,TRUE,ZERO001,09.99,025
+Integer Price,integer-price,active,TRUE,INT001,30,75
+Float Price,float-price,active,TRUE,FLOAT001,19.9900,33
+Negative Inventory,neg-inventory,active,TRUE,NEG001,25.00,-10

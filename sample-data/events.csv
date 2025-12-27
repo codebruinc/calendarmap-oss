@@ -1,0 +1,8 @@
+Title,Start Date,Start Time,End Date,End Time,Location,Description,All Day
+Team Meeting,2025-09-15,10:00 AM,2025-09-15,11:30 AM,Conference Room A,Weekly team standup and planning session,FALSE
+Product Launch,2025-09-18,,2025-09-18,,,"Major product release - all hands on deck",TRUE
+Client Workshop,2025-09-20,2:00 PM,2025-09-20,5:00 PM,Zoom Meeting,Design thinking workshop with new client,FALSE
+Company Retreat,2025-09-25,,2025-09-27,,,Annual company retreat in Tahoe,TRUE
+Q3 Review,2025-09-30,1:00 PM,2025-09-30,3:00 PM,Main Conference Room,Quarterly business review with leadership,FALSE
+Marketing Campaign Kickoff,2025-10-01,9:00 AM,2025-10-01,10:30 AM,Marketing Office,Launch new campaign strategy,FALSE
+Holiday Party,2025-12-15,,2025-12-15,,,Company holiday celebration,TRUE

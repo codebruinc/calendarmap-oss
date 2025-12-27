@@ -1,0 +1,4 @@
+Variant SKU,Available,Cost
+VALID001,not-a-number,15.00
+VALID002,50,invalid-cost
+VALID003,99999999999,25.00
