@@ -21,13 +21,13 @@
     "next": "^14.0.4",
     "nodemailer": "^7.0.6",
     "papaparse": "^5.4.1",
-    "react": "^18.2.0",
+    "react": "^19.2.3",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
     "@types/papaparse": "^5.3.14",
-    "@types/react": "^18.2.45",
+    "@types/react": "^19.2.7",
     "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.55.0",
