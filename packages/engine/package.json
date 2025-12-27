@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/node": "^20.19.11",
     "tsup": "^8.5.0",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "vitest": "^1.6.1"
   },
   "keywords": [
