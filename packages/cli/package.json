@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@calendarmap/engine": "file:../engine",
-    "commander": "^11.1.0",
+    "commander": "^14.0.3",
     "papaparse": "^5.4.1"
   },
   "devDependencies": {
