@@ -45,7 +45,7 @@ export default function SelfHostPage() {
               <h3 className="font-semibold mb-3">Vercel (Recommended)</h3>
               <p className="text-gray-600 mb-4">One-click deploy with automatic CI/CD</p>
               <a 
-                href="https://vercel.com/new/clone?repository-url=https://github.com/codebruinc/calendarmap"
+                href="https://vercel.com/new/clone?repository-url=https://github.com/codebruinc/calendarmap-oss"
                 className="bg-black text-white px-4 py-2 rounded inline-block hover:bg-gray-800"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -79,7 +79,7 @@ export default function SelfHostPage() {
 
           <h3>Step 1: Clone the Repository</h3>
           <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-            <code>{`git clone https://github.com/codebruinc/calendarmap.git
+            <code>{`git clone https://github.com/codebruinc/calendarmap-oss.git
 cd calendarmap`}</code>
           </pre>
 
@@ -173,7 +173,7 @@ ENABLE_STRIPE_PAYMENTS=true`}</code>
               <h3 className="font-semibold mb-3">📚 Documentation</h3>
               <p className="text-gray-600 mb-3">Check our GitHub README for detailed docs</p>
               <a 
-                href="https://github.com/codebruinc/calendarmap#readme"
+                href="https://github.com/codebruinc/calendarmap-oss#readme"
                 className="text-blue-600 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -186,7 +186,7 @@ ENABLE_STRIPE_PAYMENTS=true`}</code>
               <h3 className="font-semibold mb-3">🐛 Issues & Features</h3>
               <p className="text-gray-600 mb-3">Report bugs or request features</p>
               <a 
-                href="https://github.com/codebruinc/calendarmap/issues"
+                href="https://github.com/codebruinc/calendarmap-oss/issues"
                 className="text-blue-600 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"

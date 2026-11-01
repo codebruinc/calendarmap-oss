@@ -40,11 +40,11 @@
   "homepage": "https://calendarmap.app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codebruinc/calendarmap.git",
+    "url": "https://github.com/codebruinc/calendarmap-oss.git",
     "directory": "packages/engine"
   },
   "bugs": {
-    "url": "https://github.com/codebruinc/calendarmap/issues"
+    "url": "https://github.com/codebruinc/calendarmap-oss/issues"
   },
   "author": "codebru.com",
   "license": "MIT",

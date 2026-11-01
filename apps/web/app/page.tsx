@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { ArrowRight, Shield, Calendar, Zap, CheckCircle, Download } from 'lucide-react';
-import EnterpriseContactForm from '../components/EnterpriseContactForm';
 
 export default function HomePage() {
   return (
@@ -127,64 +126,6 @@ export default function HomePage() {
               <p className="text-gray-600 text-sm">Get your calendar file ready for import</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Enterprise Section */}
-      <section className="py-20 bg-white" id="enterprise">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              For Teams & Organizations
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Stop doing manual CSV imports. We can automate this entire workflow for your team.
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg shadow-xl p-8 text-white mb-12">
-            <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-6 text-center">
-                Calendar Automation for Organizations
-              </h3>
-
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div>
-                  <h4 className="font-semibold text-lg mb-3">Who it's for:</h4>
-                  <ul className="space-y-2 text-blue-100">
-                    <li>• Universities and school districts</li>
-                    <li>• Corporate operations teams</li>
-                    <li>• Event organizers</li>
-                    <li>• HR and facilities managers</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-lg mb-3">What we build:</h4>
-                  <ul className="space-y-2 text-blue-100">
-                    <li>• Direct integration from Google Sheets or your HR system</li>
-                    <li>• Automatic sync to staff calendars</li>
-                    <li>• No more manual imports or errors</li>
-                    <li>• Recurring updates handled automatically</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-6">
-                <p className="text-sm text-blue-100 text-center">
-                  <strong className="text-white">Built by CodeBru</strong> — Trusted by universities and established companies since 2015
-                </p>
-              </div>
-
-              <div className="text-center">
-                <p className="text-blue-100 mb-4">
-                  Real examples: Schools syncing class schedules, companies automating facility bookings, event teams managing recurring programs.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <EnterpriseContactForm source="homepage" />
         </div>
       </section>
 

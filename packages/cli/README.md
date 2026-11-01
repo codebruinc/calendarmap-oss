@@ -113,8 +113,8 @@ For a user-friendly interface, try the web version at [calendarmap.app](https://
 ## Support
 
 - 📖 [Documentation](https://calendarmap.app/docs)
-- 🐛 [Report Issues](https://github.com/codebruinc/calendarmap/issues)
-- 💬 [GitHub Discussions](https://github.com/codebruinc/calendarmap/discussions)
+- 🐛 [Report Issues](https://github.com/codebruinc/calendarmap-oss/issues)
+- 💬 [GitHub Discussions](https://github.com/codebruinc/calendarmap-oss/discussions)
 
 ## License
 

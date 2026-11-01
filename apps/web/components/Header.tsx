@@ -14,8 +14,7 @@ export default function Header() {
             <Link href="/docs" className="text-gray-600 hover:text-gray-900">Docs</Link>
             <Link href="/cli" className="text-gray-600 hover:text-gray-900">CLI</Link>
             <Link href="/pricing" className="text-gray-600 hover:text-gray-900">Pricing</Link>
-            <Link href="/#enterprise" className="text-gray-600 hover:text-gray-900">Contact</Link>
-            <Link href="https://github.com/codebruinc/calendarmap" className="text-gray-600 hover:text-gray-900">GitHub</Link>
+            <Link href="https://github.com/codebruinc/calendarmap-oss" className="text-gray-600 hover:text-gray-900">GitHub</Link>
           </nav>
         </div>
       </div>
