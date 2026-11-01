@@ -1,4 +1,4 @@
-# Contributing to SchemaMap
+# Contributing to CalendarMap
 
 Thank you for your interest in contributing! This guide will help you get started.
 
@@ -6,195 +6,149 @@ Thank you for your interest in contributing! This guide will help you get starte
 
 ```bash
 # Clone the repository
-git clone https://github.com/codebruinc/schemamap.git
-cd schemamap
+git clone https://github.com/codebruinc/calendarmap-oss.git
+cd calendarmap-oss
 
-# Install dependencies
-pnpm install
+# Install dependencies and build the engine first (the web app depends on it)
+cd packages/engine && npm install && npm run build
 
-# Build all packages
-pnpm -r build
-
-# Start development server
-pnpm --filter @schemamap/web dev
+# Install and start the web app
+cd ../../apps/web && npm install && npm run dev
 ```
 
 The web app will be available at `http://localhost:3000`.
 
+From the repo root, `npm run build` builds the engine and the web app in the
+right order.
+
+> **Note:** each package manages its own dependencies with `npm install` — this
+> is not a pnpm/npm workspace, so there is no root-level install step.
+
 ## 📦 Project Structure
 
-- **`packages/engine/`** - Core TypeScript engine (mapping logic, validation, templates)
+- **`packages/engine/`** - Core TypeScript engine (CSV mapping, ICS generation, validation)
 - **`packages/cli/`** - Node.js command-line interface
 - **`apps/web/`** - Next.js web application
-- **Sample CSVs** - Located in `apps/web/public/samples/`
+- **`functions/`** - Cloudflare Pages Functions
+- **Sample CSVs** - Located in `sample-data/` and `test-data/`
 
-## 🎯 How to Add a New Schema
+### Engine layout
 
-### 1. Create the Template
+| File | Responsibility |
+| --- | --- |
+| `src/mapping.ts` | Maps incoming CSV columns onto event fields |
+| `src/ics-generator.ts` | Emits RFC 5545 ICS output |
+| `src/ics-validator.ts` | Validates generated calendars |
+| `src/ics-qa-suite.ts` | Golden-case QA suite and round-trip checks |
+| `src/templates/` | Per-source column templates |
 
-Add your template to `packages/engine/src/templates/`:
+## 🎯 How to Add a New Input Template
 
-```typescript
-// packages/engine/src/templates/my-new-schema.ts
-import { Template } from '../types';
+Templates teach CalendarMap how to recognise the columns of a given CSV export.
 
-export const myNewSchemaTemplate: Template = {
-  key: 'my-new-schema',
-  title: 'My New Schema',
-  notes: [
-    'Important validation rules',
-    'Common gotchas to avoid',
-  ],
-  fields: [
-    {
-      key: 'required_field',
-      label: 'Required Field',
-      required: true,
-      type: 'string',
-      transform: ['trim'],
-      synonyms: ['alternative name', 'another name'],
-    },
-    // ... more fields
-  ],
-};
-```
+### 1. Create the template
 
-### 2. Export the Template
+Add your template to `packages/engine/src/templates/`, following the shape in
+`packages/engine/src/types.ts`. Use `synonyms` generously — that is what makes
+column auto-detection work on real-world exports.
 
-Add to `packages/engine/src/templates/index.ts`:
+### 2. Export it
 
-```typescript
-import { myNewSchemaTemplate } from './my-new-schema';
+Register the new template in `packages/engine/src/templates/index.ts` so the
+engine and CLI can both resolve it by key.
 
-export const templates = {
-  // ... existing templates
-  'my-new-schema': myNewSchemaTemplate,
-} as const;
+### 3. Add a sample CSV
 
-export { myNewSchemaTemplate };
-```
+Drop a representative CSV into `sample-data/` so the behaviour is reproducible.
+Keep it small and free of real personal data.
 
-### 3. Update Type Definitions
-
-Add your schema key to the union type in `packages/engine/src/types.ts`:
-
-```typescript
-export type Template = {
-  key: 'shopify-products' | 'shopify-inventory' | 'stripe-customers' | 'my-new-schema';
-  // ... rest of type
-};
-```
-
-### 4. Add Sample CSV
-
-Create `apps/web/public/samples/my-new-schema-sample.csv` with realistic test data.
-
-### 5. Update Web App
-
-Add navigation link in `apps/web/app/page.tsx`:
-
-```tsx
-<Link 
-  href="/map?schema=my-new-schema"
-  className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
->
-  Open My New Schema Mapper <ArrowRight className="w-5 h-5" />
-</Link>
-```
-
-### 6. Add Documentation
-
-Create `apps/web/app/docs/my-new-schema-csv-mapper/page.tsx` following the pattern of existing docs pages. Include:
-
-- Step-by-step usage guide
-- Common field mappings table
-- JSON-LD schema markup for SEO
-- Link to sample CSV download
-
-### 7. Test Everything
+### 4. Test everything
 
 ```bash
-# Build and test engine
-pnpm --filter @schemamap/engine build
-pnpm --filter @schemamap/engine test
+# Build the engine, then run the ICS QA + round-trip suite
+cd packages/engine
+npm run build
+npm run test:qa
 
-# Test CLI
-pnpm --filter @schemamap/cli build
-echo "test,data" | schemamap guess --schema my-new-schema
+# Test the CLI against your sample
+cd ../cli && npm install && npm run build
 
-# Test web app
-pnpm --filter @schemamap/web dev
-# Visit http://localhost:3000/map?schema=my-new-schema
+# Test the web app
+cd ../../apps/web && npm run dev
 ```
 
 ## 🧪 Testing
 
-### Engine Tests
+### Engine tests
+
+The QA suite is the engine's real test suite — golden cases, deliberately
+invalid "red" cases, and round-trip stability checks:
+
 ```bash
 cd packages/engine
-pnpm test
+npm run build     # test:qa runs against dist/, so build first
+npm run test:qa
 ```
 
-### Manual Testing
-1. Upload the sample CSV to your new schema mapper
-2. Verify auto-mapping works correctly  
-3. Check validation catches expected errors
-4. Download and verify output CSV format
+> **Heads up:** `npm run test` invokes vitest, but there are currently no
+> `*.test.ts` files, so it exits non-zero. New unit tests are welcome — add them
+> as `src/*.test.ts` and vitest will pick them up.
+
+### Manual testing
+
+Upload a CSV through the web UI, convert it, and open the resulting `.ics` in at
+least one real calendar client (Google Calendar, Apple Calendar, or Outlook).
+Round-tripping cleanly in a real client is the bar — a file that merely parses
+is not enough.
 
 ## 📝 Code Style
 
-- **TypeScript strict mode** - All packages use strict TypeScript
-- **Functional style** - Prefer pure functions and immutable data
-- **Clear naming** - Use descriptive names for functions and variables
-- **Comments** - Document complex mapping logic and validation rules
+- TypeScript throughout; `npm run lint` (`tsc --noEmit`) must pass
+- Match the conventions of the surrounding file
+- Prefer small, well-named functions over comments explaining long ones
 
 ## 🚨 Important Guidelines
 
 ### Privacy & Security
-- **Never upload CSVs to servers** - All processing must happen client-side
-- **No external API calls** from core engine - Keep it pure and local
-- **No tracking** - Don't add analytics or user tracking
 
-### Performance
-- **Large file support** - Engine must handle 100k+ row CSVs efficiently  
-- **Memory conscious** - Don't load entire CSVs into memory unnecessarily
-- **Browser compatible** - Code must work in browsers and Node.js
+- Conversion happens **client-side** — never add a code path that uploads a
+  user's calendar data to a server
+- Don't log file contents or event details
+- No new third-party runtime dependencies without discussion
+
+### Correctness
+
+- ICS output must stay RFC 5545 compliant
+- Be rigorous about timezones and all-day events; they are the most common
+  source of real-world bugs
+- Add a golden case to the QA suite for any bug you fix
 
 ### Compatibility
-- **No breaking changes** to engine API without major version bump
-- **Backward compatibility** for mapping.json files
-- **CLI stability** - Command signatures should remain stable
+
+- Target the Node version in `.nvmrc`
+- Keep output compatible with Google Calendar, Apple Calendar, and Outlook
 
 ## 🔄 Development Workflow
 
-1. **Fork** the repository
-2. **Create feature branch** from `main`
-3. **Make changes** following code style guidelines
-4. **Add tests** if adding new functionality
-5. **Test locally** with sample data
-6. **Submit pull request** with clear description
+1. Fork the repo and create a branch off `main`
+2. Make your change, with tests
+3. Run `npm run test:qa` and `npm run lint` in `packages/engine`
+4. Open a pull request describing the change and how you verified it
 
 ## 📋 Pull Request Checklist
 
-- [ ] Engine builds without errors (`pnpm --filter @schemamap/engine build`)
-- [ ] CLI builds and runs (`pnpm --filter @schemamap/cli build`)
-- [ ] Web app builds and deploys (`pnpm --filter @schemamap/web build`)
-- [ ] Sample CSV provided for new schemas
-- [ ] Documentation updated
-- [ ] No breaking changes to existing API
-- [ ] Follows privacy-first principles
+- [ ] Engine builds without errors (`cd packages/engine && npm run build`)
+- [ ] QA suite passes (`npm run test:qa`)
+- [ ] Type check passes (`npm run lint`)
+- [ ] Web app builds (`cd apps/web && npm run build`)
+- [ ] Generated `.ics` verified in a real calendar client
 
 ## 🆘 Getting Help
 
-- **GitHub Issues** - Ask questions or report bugs
-- **Discussions** - General questions and feature ideas
-- **Discord** - Real-time chat with maintainers (coming soon)
+- 🐛 [Report Issues](https://github.com/codebruinc/calendarmap-oss/issues)
+- 💬 [GitHub Discussions](https://github.com/codebruinc/calendarmap-oss/discussions)
 
 ## 🎉 Recognition
 
-Contributors will be recognized in:
-- README.md credits section
-- GitHub contributors page  
-- Release notes for significant contributions
-
-Thank you for helping make CSV mapping accessible to everyone! 🙌
+Contributors are credited in release notes. Thanks for helping make CalendarMap
+better!

@@ -237,7 +237,7 @@ function showUsageInfo() {
   console.log('   node spec-watcher.js\n');
   
   console.log('3. Local cron (weekly):');
-  console.log('   0 9 * * 1 cd /path/to/schemamap && node packages/engine/spec-watcher.js\n');
+  console.log('   0 9 * * 1 cd /path/to/calendarmap && node packages/engine/spec-watcher.js\n');
 }
 
 async function main() {

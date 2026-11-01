@@ -22,19 +22,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-white font-semibold mb-4">Also Try</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="https://schemamap.app/map?schema=shopify-products" className="hover:text-white">Shopify Products</Link></li>
-              <li><Link href="https://schemamap.app/map?schema=shopify-inventory" className="hover:text-white">Shopify Inventory</Link></li>
-              <li><Link href="https://schemamap.app/map?schema=stripe-customers" className="hover:text-white">Stripe Customers</Link></li>
-            </ul>
-          </div>
 
           <div>
             <h4 className="text-white font-semibold mb-4">Open Source</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="https://github.com/codebruinc/calendarmap" className="hover:text-white">GitHub</Link></li>
+              <li><Link href="https://github.com/codebruinc/calendarmap-oss" className="hover:text-white">GitHub</Link></li>
               <li><Link href="/self-host" className="hover:text-white">Self-Host</Link></li>
               <li><Link href="/privacy" className="hover:text-white">Privacy</Link></li>
               <li><Link href="/for-ai" className="hover:text-white">For AI</Link></li>
