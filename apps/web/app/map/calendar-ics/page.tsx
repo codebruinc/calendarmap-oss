@@ -1,27 +1,27 @@
-'use client';
+import type { Metadata } from 'next';
+import CalendarICSRedirect from './CalendarICSRedirect';
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+// Canonical converter URL per STABLE_URLS.md — the client component keeps the
+// existing redirect to /map?schema=calendar-ics (and preserves the hash), so
+// only the metadata is added here.
+export const metadata: Metadata = {
+  title: 'CSV to ICS Converter — CalendarMap',
+  description: 'Convert CSV events to an ICS calendar file in your browser. Works with Google Calendar, Outlook, and Apple Calendar. No login required.',
+  alternates: { canonical: '/map/calendar-ics' },
+  openGraph: {
+    title: 'CSV to ICS Converter — CalendarMap',
+    description: 'Convert CSV events to an ICS calendar file in your browser. Works with Google Calendar, Outlook, and Apple Calendar. No login required.',
+    url: 'https://calendarmap.app/map/calendar-ics',
+    siteName: 'CalendarMap',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CSV to ICS Converter — CalendarMap',
+    description: 'Convert CSV events to an ICS calendar file in your browser. Works with Google Calendar, Outlook, and Apple Calendar. No login required.',
+  },
+};
 
-// This is the canonical route for calendar-ics
-// We redirect to the main /map page with the schema parameter, preserving hash
-export default function CalendarICSPage() {
-  const router = useRouter();
-
-  useEffect(() => {
-    // Get the current hash (including #) from client-side
-    const hash = window.location.hash;
-    
-    // Redirect while preserving the hash fragment
-    router.replace(`/map?schema=calendar-ics${hash}`);
-  }, [router]);
-
-  return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-        <p className="text-gray-600">Loading calendar converter...</p>
-      </div>
-    </div>
-  );
+export default function Page() {
+  return <CalendarICSRedirect />;
 }

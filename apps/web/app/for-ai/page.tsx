@@ -1,6 +1,24 @@
 import Link from 'next/link';
 import Script from 'next/script';
 
+export const metadata = {
+  title: 'CalendarMap for AI Agents — CSV to ICS API',
+  description: 'How AI agents and automated tools can use CalendarMap to convert CSV events into ICS calendar files.',
+  alternates: { canonical: '/for-ai' },
+  openGraph: {
+    title: 'CalendarMap for AI Agents — CSV to ICS API',
+    description: 'How AI agents and automated tools can use CalendarMap to convert CSV events into ICS calendar files.',
+    url: 'https://calendarmap.app/for-ai',
+    siteName: 'CalendarMap',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CalendarMap for AI Agents — CSV to ICS API',
+    description: 'How AI agents and automated tools can use CalendarMap to convert CSV events into ICS calendar files.',
+  },
+};
+
 export default function ForAIPage() {
   const softwareApplicationStructuredData = {
     "@context": "https://schema.org",

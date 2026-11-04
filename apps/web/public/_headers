@@ -1,0 +1,26 @@
+# Cloudflare Pages headers.
+#
+# These were previously set in middleware.ts, which never runs: next.config.js
+# uses `output: 'export'`, so there is no server to execute middleware and the
+# headers were silently absent. Cloudflare Pages reads this file from the
+# deployed output instead. (Other static hosts have their own equivalent —
+# Vercel uses the `headers` key in vercel.json, Netlify reads this same format.)
+#
+# This build has no analytics and no payment provider, so the policy allows no
+# third-party origins at all. If you add either when self-hosting, allowlist
+# the host here.
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src-attr 'none'; upgrade-insecure-requests
+
+# Stable URLs (STABLE_URLS.md) — cacheable at the edge.
+/map/calendar-ics
+  Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400
+
+/status
+  Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400

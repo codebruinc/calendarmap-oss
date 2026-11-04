@@ -18,7 +18,6 @@ export default function Footer() {
               <li><Link href="/map/calendar-ics" className="hover:text-white">Converter</Link></li>
               <li><Link href="/docs" className="hover:text-white">Documentation</Link></li>
               <li><Link href="/cli" className="hover:text-white">CLI Tool</Link></li>
-              <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
             </ul>
           </div>
 

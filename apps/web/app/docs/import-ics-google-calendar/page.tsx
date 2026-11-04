@@ -1,6 +1,24 @@
 import Link from 'next/link';
 import Script from 'next/script';
 
+export const metadata = {
+  title: 'How to Import an ICS File into Google Calendar',
+  description: 'Step-by-step guide to importing an ICS calendar file into Google Calendar, including common errors and fixes.',
+  alternates: { canonical: '/docs/import-ics-google-calendar' },
+  openGraph: {
+    title: 'How to Import an ICS File into Google Calendar',
+    description: 'Step-by-step guide to importing an ICS calendar file into Google Calendar, including common errors and fixes.',
+    url: 'https://calendarmap.app/docs/import-ics-google-calendar',
+    siteName: 'CalendarMap',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Import an ICS File into Google Calendar',
+    description: 'Step-by-step guide to importing an ICS calendar file into Google Calendar, including common errors and fixes.',
+  },
+};
+
 export default function ImportICSGoogleCalendarPage() {
   const howToStructuredData = {
     "@context": "https://schema.org",

@@ -13,7 +13,6 @@ export default function Header() {
           <nav className="hidden md:flex space-x-8">
             <Link href="/docs" className="text-gray-600 hover:text-gray-900">Docs</Link>
             <Link href="/cli" className="text-gray-600 hover:text-gray-900">CLI</Link>
-            <Link href="/pricing" className="text-gray-600 hover:text-gray-900">Pricing</Link>
             <Link href="https://github.com/codebruinc/calendarmap-oss" className="text-gray-600 hover:text-gray-900">GitHub</Link>
           </nav>
         </div>

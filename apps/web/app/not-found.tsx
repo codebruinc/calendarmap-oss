@@ -7,71 +7,83 @@ export default function NotFound() {
       <div className="max-w-2xl w-full text-center">
         <h1 className="text-6xl font-bold text-gray-900 mb-4">404</h1>
         <p className="text-xl text-gray-600 mb-8">
-          Oops! The page you're looking for doesn't exist.
+          Oops! The page you&apos;re looking for doesn&apos;t exist.
         </p>
-        
+
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <h2 className="text-lg font-semibold text-gray-900 mb-6">Quick Links</h2>
-          
+
           <div className="grid md:grid-cols-2 gap-6 text-left">
             <div>
-              <h3 className="font-medium text-gray-900 mb-3">📊 Start Mapping</h3>
+              <h3 className="font-medium text-gray-900 mb-3">📅 Convert Events</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/map/shopify-products" className="text-blue-600 hover:underline flex items-center gap-1">
+                  <Link href="/map/calendar-ics" className="text-blue-600 hover:underline flex items-center gap-1">
                     <ArrowRight className="w-3 h-3" />
-                    Shopify Products Mapper
+                    CSV → ICS Converter
                   </Link>
                 </li>
                 <li>
-                  <Link href="/map/shopify-inventory" className="text-blue-600 hover:underline flex items-center gap-1">
+                  <Link href="/map/calendar-ics#sample=events" className="text-blue-600 hover:underline flex items-center gap-1">
                     <ArrowRight className="w-3 h-3" />
-                    Shopify Inventory Mapper
+                    Try with Sample Events
                   </Link>
                 </li>
                 <li>
-                  <Link href="/map/stripe-customers" className="text-blue-600 hover:underline flex items-center gap-1">
+                  <Link href="/ics-tools" className="text-blue-600 hover:underline flex items-center gap-1">
                     <ArrowRight className="w-3 h-3" />
-                    Stripe Customers Mapper
+                    Advanced ICS Tools
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/cli" className="text-blue-600 hover:underline flex items-center gap-1">
+                    <ArrowRight className="w-3 h-3" />
+                    CLI Tool
                   </Link>
                 </li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="font-medium text-gray-900 mb-3">📚 Documentation</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/docs/shopify-products-csv-mapper" className="text-blue-600 hover:underline flex items-center gap-1">
+                  <Link href="/docs/csv-to-ics-converter" className="text-blue-600 hover:underline flex items-center gap-1">
                     <ArrowRight className="w-3 h-3" />
-                    Shopify Products Guide
+                    CSV to ICS Guide
                   </Link>
                 </li>
                 <li>
-                  <Link href="/docs/shopify-inventory-csv-mapper" className="text-blue-600 hover:underline flex items-center gap-1">
+                  <Link href="/docs/import-ics-google-calendar" className="text-blue-600 hover:underline flex items-center gap-1">
                     <ArrowRight className="w-3 h-3" />
-                    Shopify Inventory Guide
+                    Import to Google Calendar
                   </Link>
                 </li>
                 <li>
-                  <Link href="/docs/stripe-customers-csv-mapper" className="text-blue-600 hover:underline flex items-center gap-1">
+                  <Link href="/docs/import-ics-outlook" className="text-blue-600 hover:underline flex items-center gap-1">
                     <ArrowRight className="w-3 h-3" />
-                    Stripe Customers Guide
+                    Import to Outlook
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/self-host" className="text-blue-600 hover:underline flex items-center gap-1">
+                    <ArrowRight className="w-3 h-3" />
+                    Self-Host CalendarMap
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        
+
         <div className="flex justify-center gap-4">
-          <Link 
+          <Link
             href="/"
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
           >
             Go to Homepage
           </Link>
-          <Link 
+          <Link
             href="/docs"
             className="border border-gray-300 hover:bg-gray-50 text-gray-700 px-6 py-3 rounded-lg font-semibold transition-colors"
           >

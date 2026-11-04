@@ -4,8 +4,11 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export const metadata: Metadata = {
+  // Lets every page declare `alternates.canonical` as a relative path.
+  metadataBase: new URL('https://calendarmap.app'),
   title: 'CalendarMap — Convert CSV to ICS Calendar in 30 seconds',
   description: 'Drop your CSV events, get an ICS calendar file. Works with Google Calendar & Outlook. No login. Runs in your browser.',
+  alternates: { canonical: '/' },
   keywords: ['CSV', 'ICS', 'calendar', 'events', 'Google Calendar', 'Outlook', 'iCalendar', 'data conversion', 'no-code'],
   icons: {
     icon: '/favicon.svg',

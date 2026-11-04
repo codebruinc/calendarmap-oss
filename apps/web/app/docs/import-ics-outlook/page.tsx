@@ -1,6 +1,24 @@
 import Link from 'next/link';
 import Script from 'next/script';
 
+export const metadata = {
+  title: 'How to Import an ICS File into Outlook',
+  description: 'Step-by-step guide to importing an ICS calendar file into Outlook desktop and Outlook on the web.',
+  alternates: { canonical: '/docs/import-ics-outlook' },
+  openGraph: {
+    title: 'How to Import an ICS File into Outlook',
+    description: 'Step-by-step guide to importing an ICS calendar file into Outlook desktop and Outlook on the web.',
+    url: 'https://calendarmap.app/docs/import-ics-outlook',
+    siteName: 'CalendarMap',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Import an ICS File into Outlook',
+    description: 'Step-by-step guide to importing an ICS calendar file into Outlook desktop and Outlook on the web.',
+  },
+};
+
 export default function ImportICSOutlookPage() {
   const howToStructuredData = {
     "@context": "https://schema.org",

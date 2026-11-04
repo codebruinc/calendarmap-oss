@@ -34,11 +34,6 @@ export async function GET() {
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>${baseUrl}/pricing</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>${baseUrl}/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -47,6 +42,21 @@ export async function GET() {
     <loc>${baseUrl}/self-host</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/docs/import-ics-google-calendar</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/docs/import-ics-outlook</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/ics-tools</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>`;
 

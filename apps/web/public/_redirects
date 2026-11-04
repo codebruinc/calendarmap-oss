@@ -1,0 +1,15 @@
+# Cloudflare Pages redirects.
+#
+# Ported from middleware.ts, which never runs under `output: 'export'` — these
+# legacy URLs returned 404 instead of redirecting. Netlify reads this same
+# format; on Vercel use the `redirects` key in vercel.json instead.
+#
+# Note: middleware.ts also redirected bare /map to /map/calendar-ics. That rule
+# is deliberately NOT ported: /map/calendar-ics itself redirects to
+# /map?schema=calendar-ics, so the pair would loop. Bare /map already defaults
+# to the calendar-ics schema in MapperComponent, so it needs no redirect.
+
+/converter   /map/calendar-ics/   301
+/csv-to-ics  /map/calendar-ics/   301
+/convert     /map/calendar-ics/   301
+/tool        /map/calendar-ics/   301

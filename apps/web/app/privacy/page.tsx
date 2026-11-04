@@ -1,5 +1,23 @@
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Privacy Policy — CalendarMap',
+  description: 'CalendarMap converts your CSV in the browser. Your event data never leaves your device and is never uploaded.',
+  alternates: { canonical: '/privacy' },
+  openGraph: {
+    title: 'Privacy Policy — CalendarMap',
+    description: 'CalendarMap converts your CSV in the browser. Your event data never leaves your device and is never uploaded.',
+    url: 'https://calendarmap.app/privacy',
+    siteName: 'CalendarMap',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy — CalendarMap',
+    description: 'CalendarMap converts your CSV in the browser. Your event data never leaves your device and is never uploaded.',
+  },
+};
+
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-gray-50">

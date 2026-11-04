@@ -1,6 +1,24 @@
 import { Copy, Download, Terminal } from 'lucide-react';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'CalendarMap CLI — Convert CSV to ICS from the Command Line',
+  description: 'Free command-line tool to convert CSV events to ICS calendar files. Unlimited events, scriptable, runs offline.',
+  alternates: { canonical: '/cli' },
+  openGraph: {
+    title: 'CalendarMap CLI — Convert CSV to ICS from the Command Line',
+    description: 'Free command-line tool to convert CSV events to ICS calendar files. Unlimited events, scriptable, runs offline.',
+    url: 'https://calendarmap.app/cli',
+    siteName: 'CalendarMap',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CalendarMap CLI — Convert CSV to ICS from the Command Line',
+    description: 'Free command-line tool to convert CSV events to ICS calendar files. Unlimited events, scriptable, runs offline.',
+  },
+};
+
 export default function CLIPage() {
   return (
     <div className="min-h-screen bg-gray-50">
