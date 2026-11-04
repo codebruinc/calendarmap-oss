@@ -12,9 +12,10 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "tsc --noEmit",
-    "test": "vitest",
-    "test:qa": "node -p \"const { runQASuite, formatQAReport, runRoundTripTest, goldenCases } = require('./dist/index.js'); [formatQAReport(runQASuite()), '\\n🔄 Round-Trip: ' + goldenCases.map(t => runRoundTripTest(t.events).passed ? '✅' : '❌').join(' ') + (goldenCases.every(t => runRoundTripTest(t.events).passed) ? ' All stable!' : ' Some unstable!')].join('\\n')\"",
-    "prepublishOnly": "npm run build"
+    "test": "vitest run",
+    "test:qa": "node -p \"const { runQASuite, formatQAReport, runRoundTripTest, goldenCases } = require('./dist/index.js'); [formatQAReport(runQASuite()), '\\n\ud83d\udd04 Round-Trip: ' + goldenCases.map(t => runRoundTripTest(t.events).passed ? '\u2705' : '\u274c').join(' ') + (goldenCases.every(t => runRoundTripTest(t.events).passed) ? ' All stable!' : ' Some unstable!')].join('\\n')\"",
+    "prepublishOnly": "npm run build",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "date-fns": "^2.30.0",
